@@ -1,5 +1,6 @@
-<html>
-    <body>
+{% extends 'cinemaapp/layout.html' %}
+
+{% block content %}
         <h2>{{ movie.title }}</h2>
         <p>Genre: {{ movie.genre }}</p>
         <p>Director: {{ movie.director }}</p>
@@ -7,5 +8,4 @@
         <p>Release Year: {{ movie.release_year }}</p>
         <p>Duration: {{ movie.duration }} minutes</p>
         <a href="{% url 'movie_list' %}">Back</a>
-    </body>
-</html>
+{% endblock content %}

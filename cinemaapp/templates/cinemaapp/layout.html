@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies</title>
+    </head>
+    <header>
+    <a href="{% url 'tema1' %}">Activar tema 1</a>
+    <a href="{% url 'tema2' %}">Activar tema 2</a>
+    <a href="{% url 'borracookie' %}">Desactivar tema</a>
+    </header>
+    {% if tema == 'tema1' %}
+    <body style='background-color: pink; color: green'>
+    {% elif tema == 'tema2' %}
+    <body style='background-color: red; color: yellow'>
+    {% else %}
+    <body>
+    {% endif %}
+        {% block content %}{% endblock content %}
+    </body>
+</html>

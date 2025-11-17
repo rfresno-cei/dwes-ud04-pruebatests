@@ -44,3 +44,21 @@ class MovieDetail(DetailView):
     model = Movie
     template_name = 'cinemaapp/detail.html'
     context_object_name = 'movie'
+
+def tema1(request):
+    url_anterior = request.META.get('HTTP_REFERER', '/list')
+    resp = redirect(url_anterior)
+    resp.set_cookie('tema', 'tema1')
+    return resp
+
+def tema2(request):
+    url_anterior = request.META.get('HTTP_REFERER', '/list')
+    resp = redirect(url_anterior)
+    resp.set_cookie('tema', 'tema2')
+    return resp
+
+def borracookie(request):
+    url_anterior = request.META.get('HTTP_REFERER', '/list')
+    resp = redirect(url_anterior)
+    resp.delete_cookie('tema')
+    return resp
